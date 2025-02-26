@@ -2,15 +2,15 @@
 .code
 org 100h
 
-MAX_PASSWORD_SIZE	equ 64d
-TRUE_PASSWORD_SIZE	equ 08d
+MAX_PASSWORD_SIZE	equ 80h
+PASSWORD_SIZE		equ 08h
 	
 start:	jmp main
 
 include data.asm
 
-TRUE_PASSWORD	db "maxfimoz",		    	  0dh, 0ah, '$'
-PASSWORD_BUFFER	db TRUE_PASSWORD_SIZE dup(' '),   0dh, 0ah, '$'
+PASSWORD_BUFFER	db PASSWORD_SIZE dup ('$'),			0dh, 0ah, '$'
+PASSWORD	db 01h, 02h, 04h, 08h, 10h, 20h, 40h, 0d5h,	0dh, 0ah, '$'
 
 main	proc
 	
@@ -27,13 +27,32 @@ main	proc
 	mov dx, offset PASSWORD_BUFFER	
 	int 21h		
 
-	mov cx, ax
+	mov cx, PASSWORD_SIZE
 
 	mov ax, ds
 	mov es, ax
 
+	mov si, offset PASSWORD_BUFFER
+	push si
+	
+	mov bl, 11111111b
+
+	@@next:
+		mov al, [si]
+		inc si
+		xor bl, al
+		
+	loop @@next
+
+	cmp bl, 01010101b
+	jne notEqual
+
+	mov cx, PASSWORD_SIZE	
+
+	pop si
+	
 	lea si, PASSWORD_BUFFER
-	lea di, TRUE_PASSWORD
+	lea di, PASSWORD
 
 	repe cmpsb
 	jnz notEqual
@@ -41,19 +60,18 @@ main	proc
 	jmp equal
 
 
+notEqual:
+	mov ax, 0900h
+	mov dx, offset ACCESS_DENIED
+	int 21h
+	jmp exit
+
 equal:	mov ax, 0900h
 	mov dx, offset ACCESS_GRANTED
 	int 21h
 
 	jmp exit
 
-	
-notEqual:
-	mov ax, 0900h
-	mov dx, offset ACCESS_DENIED
-	int 21h	
-
-	jmp exit
 
 exit:	
 	mov ax, 4c00h
