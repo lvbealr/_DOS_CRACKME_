@@ -1,1 +1,1 @@
-# _DOS_CRACKME_
+# [DOS] CrackME
