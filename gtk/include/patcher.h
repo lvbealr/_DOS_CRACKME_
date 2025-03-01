@@ -1,0 +1,31 @@
+#ifndef PATCHER_H_
+#define PATCHER_H_
+
+extern GtkApplication *application;
+extern const char     *applicationID;
+
+extern GtkWidget      *window;
+extern GtkWidget      *overlay;
+extern GtkWidget      *labelBox;
+extern GtkWidget      *firstLabel;
+extern GtkWidget      *secondLabel;
+extern GtkWidget      *progressBox;
+extern GtkWidget      *progressBar;
+extern GtkWidget      *managerBox;
+extern GtkWidget      *background;
+extern GtkWidget      *entryField;
+extern GtkWidget      *button;
+
+extern int             width;
+extern int             height;
+extern const char     *crackedFile;
+extern char           *pathBuffer;
+extern char           *msgBuffer;
+
+const char INSERT_USER_PASSWORD[] = {0x48, 0x41, 0x43, 0x4B, 0x45, 0x44};
+
+// FUNCTIONS //
+void *patchFile(void *arg);
+// FUNCTIONS //
+
+#endif // PATCHER_H
