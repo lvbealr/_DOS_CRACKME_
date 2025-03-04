@@ -113,7 +113,7 @@ static void playMusic(GtkWidget *widget, gpointer data) {
 
      // GIF TO BACKGROUND //////////////////////////////////////////////////////////////////////////
      GError *error = NULL;
-     GdkPixbufAnimation *animation = gdk_pixbuf_animation_new_from_file("img/background.gif", &error);
+     GdkPixbufAnimation *animation = gdk_pixbuf_animation_new_from_file("img/cats.gif", &error);
 
      GdkPixbufAnimationIter *iter = gdk_pixbuf_animation_get_iter(animation, NULL);
 
