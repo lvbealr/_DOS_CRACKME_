@@ -182,3 +182,9 @@ After launching, you must specify the path to the file (see note) and press the 
 > [!IMPORTANT]
 > Any file for hacking **must be** placed in the `gtk/files/` folder
 
+<p align="center">
+  <a href="" rel="noopener">
+ <img src="https://github.com/lvbealr/_DOS_CRACKME_/blob/main/gtk/img/example.gif" alt="Example Gif"></a>
+</p>
+
+
