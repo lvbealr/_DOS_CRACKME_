@@ -23,6 +23,7 @@ extern char           *pathBuffer;
 extern char           *msgBuffer;
 
 const char INSERT_USER_PASSWORD[] = {0x48, 0x41, 0x43, 0x4B, 0x45, 0x44};
+const size_t PASSWORD_SIZE        = sizeof(INSERT_USER_PASSWORD);
 
 // FUNCTIONS //
 void *patchFile(void *arg);

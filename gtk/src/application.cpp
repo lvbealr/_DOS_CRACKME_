@@ -283,7 +283,9 @@ static void playMusic(GtkWidget *widget, gpointer data) {
 
      sprintf(msgBuffer, PATCHED_SUCCESSFUL);
      gtk_label_set_markup(GTK_LABEL(firstLabel), msgBuffer);
-     sprintf(msgBuffer, "Now correct password is: <span foreground='orange'>%s</span>", INSERT_USER_PASSWORD);
+     sprintf(msgBuffer, "Now correct password is: <span foreground='orange'>");
+     strncat(msgBuffer, INSERT_USER_PASSWORD, PASSWORD_SIZE);
+     strcat(msgBuffer, "</span>");
      gtk_label_set_markup(GTK_LABEL(secondLabel), msgBuffer);
 
      return NULL;
