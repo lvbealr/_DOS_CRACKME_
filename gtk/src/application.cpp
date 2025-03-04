@@ -6,6 +6,7 @@
 #include "objectParameters.h"
 #include "patcher.h"
 
+// TODO why do you need a macro here? Just make a function.
 #define SET_ALIGN(object, halign, valign) do {         \
     gtk_widget_set_halign(GTK_WIDGET(object), halign); \
     gtk_widget_set_valign(GTK_WIDGET(object), valign); \
@@ -40,13 +41,16 @@ static void playMusic(GtkWidget *widget, gpointer data) {
 
   	GError *error = NULL;
 
+    // TODO strange alignemet
     char *cmdBuffer  = (char *)calloc(BUFFER_SIZE, sizeof(char));
     customAssert(cmdBuffer != NULL, 1);
 
+    // TODO another one
     char *currDir   = (char *)calloc(BUFFER_SIZE / 2, sizeof(char));
     customAssert(currDir  != NULL, 1);
     getcwd(currDir, BUFFER_SIZE / 2);
 
+    // TODO snprintf?????
     sprintf(cmdBuffer, "playbin uri=file://%s/%s", currDir, PATH_TO_SOUND);
 
     GstElement *pipeline = gst_parse_launch(cmdBuffer, &error);
@@ -67,6 +71,7 @@ static void playMusic(GtkWidget *widget, gpointer data) {
      gst_init(&argc, &argv);
      gtk_init();
 
+     // TODO what the fuck?? You're just assigning the variable to itself
      applicationID = applicationID;
      application   = gtk_application_new(applicationID, flags);
      customWarning(application != NULL, APPLICATION_ERROR);
@@ -74,6 +79,7 @@ static void playMusic(GtkWidget *widget, gpointer data) {
      width  = windowWidth;
      height = windowHeight;
 
+     // TODO alignemnt...
      msgBuffer   = (char *)calloc(BUFFER_SIZE, sizeof(char));
      customWarning(msgBuffer!= NULL, CALLOC_ERROR);
 
@@ -85,6 +91,7 @@ static void playMusic(GtkWidget *widget, gpointer data) {
  }
 
  static void activateGtkApplication(GApplication *application) {
+     // TODO use assert instead of warning. (think why)
      customWarning(application != NULL, (void) NO_GTK_APP);
 
      window = gtk_application_window_new(GTK_APPLICATION(application));
@@ -98,12 +105,17 @@ static void playMusic(GtkWidget *widget, gpointer data) {
 
      initializeApplicationInterface();
 
+     // TODO my eyes...
      gtk_window_present            (GTK_WINDOW(window));
  }
 
  gtkError initializeApplicationInterface() {
      customWarning(window != NULL, NO_GTK_WINDOW);
 
+    // TODO why are there 5 whitespaces instead of 4????????????
+
+    // TODO https://gitlab.gnome.org/jpu/cambalache
+    // DO NOT DESIGN USER INTERFACE IN CODE
      overlay = gtk_overlay_new();
      customWarning(overlay != NULL, NO_GTK_OVERLAY);
      gtk_window_set_child(GTK_WINDOW(window), overlay);
@@ -191,10 +203,12 @@ static void playMusic(GtkWidget *widget, gpointer data) {
      return GTK_NO_ERROR;
  }
 
+// TODO why the funcking header is here and not on the top of file
  #include <unistd.h>
 
+// TODO rename this function. It's not clear what it does
  void checkButton(GtkButton *button) {
-     if (!(button)) {
+     if (!(button)) { // TODO why not to use your customWarning here? (like everywhere else)
          return;
      }
 
@@ -226,6 +240,7 @@ static void playMusic(GtkWidget *widget, gpointer data) {
      return;
  }
 
+// TODO Consider removing static global variable. Please...
  static guint progressBarThread = 0;
 
  static gboolean updateProgress(gpointer userData) {

@@ -1,6 +1,7 @@
 #ifndef PATCHER_H_
 #define PATCHER_H_
 
+// TODO you're fucking crazy... НАСКОЛЬКО НАХУЙ НАДР БЫТЬ ОТБИТЫМ ЧТОБЫ ЕЩЕ И ДУБЛИРОВАТЬ ВСЕ ЭТО ГОВНИЩЕ
 extern GtkApplication *application;
 extern const char     *applicationID;
 

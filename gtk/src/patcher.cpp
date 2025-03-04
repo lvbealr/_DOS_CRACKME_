@@ -8,8 +8,10 @@
 } while (0)
 
 
+// Make static or move in header
 const size_t PASSWORD_START_ADDRESS = 0xD7;
 
+// TODO what is arg?
 void *patchFile(void *arg) {
     FILE *comFile = fopen(pathBuffer, "r+b");
 
@@ -20,5 +22,6 @@ void *patchFile(void *arg) {
 
     FREE_(pathBuffer);
 
+    // TODO do you really need this??
     return NULL;
 }
