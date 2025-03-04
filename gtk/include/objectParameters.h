@@ -22,8 +22,6 @@ static const double PROGRESS_BAR_DEFAULT_VALUE = 0.0;
 static const int    MANAGER_BOX_INDENT         = 0;
 static const int    MANAGER_BOX_MARGIN_BOTTOM  = 20;
 
-static const char  *BACKGROUND_IMAGE_PATH      = "img/back16.jpg";
-
 static const char  *ENTRYFIELD_PLACEHOLDER_TXT = "Enter a path to file to crack...";
 static const int    ENTRYFIELD_DEFAULT_WIDTH   = 400;
 static const int    ENTRYFIELD_DEFAULT_HEIGHT  = 20;
