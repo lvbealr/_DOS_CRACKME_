@@ -11,12 +11,12 @@
     gtk_widget_set_valign(GTK_WIDGET(object), valign); \
 } while (0)
 
-typedef struct {
-  GtkPicture *picture;
-  GdkPixbufAnimation *animation;
+struct animationData {
+  GtkPicture             *picture;
+  GdkPixbufAnimation     *animation;
   GdkPixbufAnimationIter *iter;
-  guint timeout_id;
-} animationData;
+  guint 				  timeout_id;
+};
 
 static gboolean updateAnimation(gpointer userData) {
     animationData *data = (animationData *) userData;
@@ -163,10 +163,6 @@ static void playMusic(GtkWidget *widget, gpointer data) {
      SET_ALIGN(managerBox, GTK_ALIGN_CENTER, GTK_ALIGN_END);
      gtk_widget_set_margin_bottom(managerBox, MANAGER_BOX_MARGIN_BOTTOM);
      gtk_overlay_add_overlay(GTK_OVERLAY(overlay), managerBox);
-
-//     background = gtk_picture_new_for_filename(BACKGROUND_IMAGE_PATH);
-//     customWarning(background != NULL, NO_GTK_BACKGROUND);
-//     gtk_overlay_set_child(GTK_OVERLAY(overlay), background);
 
      entryField = gtk_entry_new();
      customWarning(entryField != NULL, NO_GTK_ENTRY_FIELD);

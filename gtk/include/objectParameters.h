@@ -38,7 +38,7 @@ static const char  *COM_FILE_FOUND_MESSAGE     = "<span foreground='orange'>[OK]
 static const char  *PATH_TO_FILE_MESSAGE       = "<span foreground='gray'>%s</span>";
 static const char  *PATCHED_SUCCESSFUL         = "<span foreground='green'>[SUCCESS]: file was cracked!</span>";
 
-static const char  *PATH_TO_SOUND              = "sounds/bgSound2.mp3";
+static const char  *PATH_TO_SOUND              = "sounds/bgSound3.mp3";
 
 // ######################################### OBJECTS PARAMETERS ############################################# //
 
