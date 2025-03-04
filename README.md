@@ -118,9 +118,9 @@ Let's look at the addresses `0000:015e - 0000:017f`. We see that some value `0x1
  <img src="https://i.imgur.com/SDwXoNY.png" alt="Passwords Comparison" width = 640"></a>
 </p>
 
-| `0000:0199 - 0000:01AC` | `0000:01AD - 0000:01BA` |     `0000:01BB`     | `0000:01BC - 0000:01D5` | `0000:01D6` | `0000:01D7 - 0000:01DC` | `0000:01DD - 0000:01DF` |     `0000:01E0`      | `0000:01E1 - 0000:0000:021B` | 
+| `0000:0199 - 0000:01AC` | `0000:01AD - 0000:01BA` |     `0000:01BB`     | `0000:01BC - 0000:01D5` | `0000:01D6` | `0000:01D7 - 0000:01DC` | `0000:01DD - 0000:01DF` |     `0000:01E0`      | `0000:01E1 - 0000:021B` | 
 |:-----------------------:|:-----------------------:|:-------------------:|:-----------------------:|:-----------------------:|:-----------------------:|:-----------------------:|:--------------------:|:-----------------------:|
-|     PASSWORD BUFFER     |  DEFAULT FAIL MESSAGE   | TERMINATE SYMBOL `$` | SUCCESS MESSAGE | TERMINATE SYMBOL `$` | TRUE PASSWORD | TERMINATE SYBOLS `\r`, `\n`, `$` | SPECIAL MESSAGE FLAG | SPECIAL MESSAGE |  
+|     PASSWORD BUFFER     |  DEFAULT FAIL MESSAGE   | TERMINATE SYMBOL `$` | SUCCESS MESSAGE | TERMINATE SYMBOL `$` | TRUE PASSWORD | TERMINATE SYBOLS `\r`, `\n`, `$` | SPECIAL MESSAGE FLAG |     SPECIAL MESSAGE     |  
 
 Is it possible to simply rewrite the correct password to your own, erasing all messages? **It's not that simple.**
 It turns out that memory is erased with random symbols. The protection is implemented in the function `FUN_0000_0181()`
