@@ -1,6 +1,6 @@
 #ifndef GTKTEST_OBJECTS_H_
 #define GTKTEST_OBJECTS_H_
-
+// TODO fuck...
 // ############################# WINDOW ################################ //
 //    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    //
 //    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    //
@@ -34,6 +34,8 @@
 // ############################# WINDOW ################################ //
 
 // ############################# OBJECTS ############################### //
+// TODO remove this fucking shit please. Это пиздец полнейший. У меня словарного запаса на английском не хватает чтобы это выразить
+// TODO why so many global variables???? Why not in struct? And a lot of other questions...
                        GtkApplication *application   = {};
                        const char     *applicationID = {};
 

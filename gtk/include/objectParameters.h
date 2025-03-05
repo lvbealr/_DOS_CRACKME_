@@ -3,6 +3,7 @@
 
 // ######################################### OBJECTS PARAMETERS ############################################# //
 
+// TODO these values should be stored in the xml file
 static const int    WINDOW_WIDTH               = 640;
 static const int    WINDOW_HEIGHT              = 480;
 
